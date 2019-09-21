@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nepalicalendar.Lambda.AlexaSkill", "Nepalicalendar.Lambda.AlexaSkill\Nepalicalendar.Lambda.AlexaSkill.csproj", "{F97B79AE-C838-4A01-9C0F-F69763CEC996}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nepalicalendar.Lambda.AlexaSkill.Tests", "Nepalicalendar.Lambda.AlexaSkill.Tests\Nepalicalendar.Lambda.AlexaSkill.Tests.csproj", "{DC70FD4A-A166-43CA-913D-DEA243CC8D85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F97B79AE-C838-4A01-9C0F-F69763CEC996}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F97B79AE-C838-4A01-9C0F-F69763CEC996}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F97B79AE-C838-4A01-9C0F-F69763CEC996}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F97B79AE-C838-4A01-9C0F-F69763CEC996}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC70FD4A-A166-43CA-913D-DEA243CC8D85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC70FD4A-A166-43CA-913D-DEA243CC8D85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC70FD4A-A166-43CA-913D-DEA243CC8D85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC70FD4A-A166-43CA-913D-DEA243CC8D85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EDD4078B-5355-4205-BDB8-3F4C55BE9083}
+	EndGlobalSection
+EndGlobal
