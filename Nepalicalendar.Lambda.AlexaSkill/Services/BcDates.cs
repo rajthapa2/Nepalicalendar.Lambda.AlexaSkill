@@ -1,9 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Nepalicalendar.Lambda.AlexaSkill.Services
 {
     public class BcDates
     {
+        public static DateTime ReferenceAdDate = new DateTime(2019, 09, 21);
+        public static BCDate ReferenceBcDate = new BCDate(2076, BCMonth.Ashwin, 04);
+
         private static Dictionary<int, List<int>> NepaliCalendarYearDays =
             new Dictionary<int, List<int>>()
             {
@@ -102,8 +106,13 @@ namespace Nepalicalendar.Lambda.AlexaSkill.Services
 
         public static int GetTotalDaysInMonth(int year, BCMonth month)
         {
-            var intValue = (int)month;
-            return NepaliCalendarYearDays[year][intValue];
+            var intValue = (int) month;
+            return NepaliCalendarYearDays[year][intValue - 1];
+        }
+
+        public static IDateConverter GetDateConverter(int daysDiff)
+        {
+            return daysDiff > 0 ? (IDateConverter) new PositiveConterver() : new NegativeConveter();
         }
     }
 }
