@@ -46,8 +46,14 @@ namespace Nepalicalendar.Lambda.AlexaSkill.Tests
         }
 
         [Theory]
-        //[InlineData(2019, 09, 17, "31 Bhadra 2076")]
+        [InlineData(2019, 09, 17, "31 Bhadra 2076")]
         [InlineData(2019, 09, 16, "30 Bhadra 2076")]
+        [InlineData(2019, 08, 18, "01 Bhadra 2076")]
+        [InlineData(2019, 08, 17, "32 Shrawan 2076")]
+        [InlineData(2019, 07, 16, "31 Ashad 2076")]
+        [InlineData(2019, 06, 29, "14 Ashad 2076")]
+        [InlineData(2019, 04, 13, "30 Chaitra 2075")]
+        [InlineData(1989, 02, 07, "25 Magh 2045")]
         public void Get_nepaliDate_in_past(int year, int month, int day, string expected)
         {
             var dateTimeService = Substitute.For<IDateTimeService>();
