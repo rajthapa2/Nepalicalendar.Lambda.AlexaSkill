@@ -32,6 +32,8 @@ namespace Nepalicalendar.Lambda.AlexaSkill.Tests
         [InlineData(2019, 12, 31, "15 Poush 2076")]
         [InlineData(2020, 01, 01, "16 Poush 2076")]
         [InlineData(2020, 01, 15, "01 Magh 2076")]
+        [InlineData(2020, 04, 13, "01 Baishak 2077")]
+        [InlineData(2022, 10, 25, "08 Kartik 2079")]
         public void Get_nepaliDate_in_future(int year, int month, int day, string expected)
         {
             var dateTimeService = Substitute.For<IDateTimeService>();

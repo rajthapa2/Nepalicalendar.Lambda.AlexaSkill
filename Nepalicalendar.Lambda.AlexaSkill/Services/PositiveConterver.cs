@@ -19,7 +19,7 @@
                 {
                     if (newMonth == 12)
                     {
-                        newMonth = 1;
+                        newMonth = 0;
                         newYear = newYear + 1;
                     }
                     newMonth += 1;
