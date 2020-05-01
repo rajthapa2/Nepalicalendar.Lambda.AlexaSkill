@@ -1,6 +1,9 @@
-﻿namespace Nepalicalendar.Lambda.AlexaSkill.Services
+﻿using System;
+
+namespace NepaliCalendar.Lambda.AlexaSkill.Services
 {
     public interface INepaliCalendarService
     {
+        string GetNepaliDate(DateTime date);
     }
 }

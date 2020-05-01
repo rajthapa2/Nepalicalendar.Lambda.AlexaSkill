@@ -1,14 +1,16 @@
 ﻿using System;
 
-namespace Nepalicalendar.Lambda.AlexaSkill.Services
+namespace NepaliCalendar.Lambda.AlexaSkill.Services
 {
     public class NepaliCalendarService : INepaliCalendarService
     {
-        public NepaliCalendarService(IDateTimeService dateTimeService)
+        public ISystemTime SystemTime { get; }
+
+        public NepaliCalendarService(ISystemTime systemTime)
         {
-            _dateTimeService = dateTimeService;
+            SystemTime = systemTime;
         }
-        public IDateTimeService _dateTimeService { get; }
+
         public string GetNepaliDate(DateTime date)
         {
             var daysDiff = Convert.ToInt32((date - BcDates.ReferenceAdDate).TotalDays);

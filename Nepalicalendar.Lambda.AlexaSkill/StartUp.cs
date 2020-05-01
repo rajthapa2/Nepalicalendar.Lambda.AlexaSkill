@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using NepaliCalendar.Lambda.AlexaSkill.Services;
 
 namespace Nepalicalendar.Lambda.AlexaSkill
 {
@@ -14,6 +15,8 @@ namespace Nepalicalendar.Lambda.AlexaSkill
         private static  void ConfigureServices(IServiceCollection serviceCollection)
         {
             //serviceCollection.AddTransient<ILambdaConfiguration, LambdaConfiguration>();
+            serviceCollection.AddTransient<ISystemTime, SystemTime>();
+            serviceCollection.AddTransient<INepaliCalendarService, NepaliCalendarService>();
         }
     }
 }

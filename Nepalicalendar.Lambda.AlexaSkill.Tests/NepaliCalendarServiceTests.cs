@@ -2,7 +2,8 @@
 using Xunit;
 using NSubstitute;
 using Shouldly;
-using Nepalicalendar.Lambda.AlexaSkill.Services;
+using NepaliCalendar.Lambda.AlexaSkill.Services;
+using TimeZoneConverter;
 
 
 namespace Nepalicalendar.Lambda.AlexaSkill.Tests
@@ -36,7 +37,7 @@ namespace Nepalicalendar.Lambda.AlexaSkill.Tests
         [InlineData(2022, 10, 25, "08 Kartik 2079")]
         public void Get_nepaliDate_in_future(int year, int month, int day, string expected)
         {
-            var dateTimeService = Substitute.For<IDateTimeService>();
+            var dateTimeService = Substitute.For<ISystemTime>();
 
             var  mockDate = new DateTime(year, month, day);
             dateTimeService.GetDateTime().Returns(mockDate);
@@ -58,7 +59,7 @@ namespace Nepalicalendar.Lambda.AlexaSkill.Tests
         [InlineData(1989, 02, 07, "25 Magh 2045")]
         public void Get_nepaliDate_in_past(int year, int month, int day, string expected)
         {
-            var dateTimeService = Substitute.For<IDateTimeService>();
+            var dateTimeService = Substitute.For<ISystemTime>();
 
             var mockDate = new DateTime(year, month, day);
             dateTimeService.GetDateTime().Returns(mockDate);
@@ -67,6 +68,25 @@ namespace Nepalicalendar.Lambda.AlexaSkill.Tests
             string nepaliDate = calendarService.GetNepaliDate(mockDate);
 
             nepaliDate.ShouldBe(expected);
+        }
+
+        [Fact]
+        public void Get_nepaliDate_With_DateInfo()
+        {
+            var info = TZConvert.GetTimeZoneInfo("Nepal Standard Time");
+            DateTimeOffset localServerTime = DateTimeOffset.Now;
+            DateTimeOffset localTime = TimeZoneInfo.ConvertTime(localServerTime, info);
+
+            var dateTimeService = Substitute.For<ISystemTime>();
+
+            var mockDate = localTime.Date;
+            dateTimeService.GetDateTime().Returns(mockDate);
+
+            var calendarService = new NepaliCalendarService(dateTimeService);
+
+            string nepaliDate = calendarService.GetNepaliDate(mockDate);
+
+            nepaliDate.ShouldNotBe(null);
         }
     }
 }

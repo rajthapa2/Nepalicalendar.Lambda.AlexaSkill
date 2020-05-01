@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace Nepalicalendar.Lambda.AlexaSkill.Services
+namespace NepaliCalendar.Lambda.AlexaSkill.Services
 {
-    public class DateTimeService : IDateTimeService
+    public class SystemTime : ISystemTime
     {
-        public DateTimeService()
+        public SystemTime()
         {
         }
 

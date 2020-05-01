@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Nepalicalendar.Lambda.AlexaSkill.Services
+namespace NepaliCalendar.Lambda.AlexaSkill.Services
 {
     public class BcDates
     {

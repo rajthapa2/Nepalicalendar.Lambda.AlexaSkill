@@ -1,4 +1,4 @@
-﻿namespace Nepalicalendar.Lambda.AlexaSkill.Services
+﻿namespace NepaliCalendar.Lambda.AlexaSkill.Services
 {
     public class BCDate
     {

@@ -1,4 +1,4 @@
-﻿using Nepalicalendar.Lambda.AlexaSkill.Services;
+﻿using NepaliCalendar.Lambda.AlexaSkill.Services;
 using System;
 
 namespace Nepalicalendar.Lambda.AlexaSkill.Tests
