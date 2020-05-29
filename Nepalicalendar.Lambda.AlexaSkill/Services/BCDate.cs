@@ -15,7 +15,7 @@
 
         public override string ToString()
         {
-            return $"{Day.ToString("00")} {Month} {Year}";
+            return $"{Month}, {Day.ToString("00")}, {Year}";
         }
     }
 }
